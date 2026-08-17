@@ -14,7 +14,7 @@ import { BodyMiddleware } from './middlewares/body.middleware';
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
     consumer
-      .apply(AuthMiddleware, AuthMiddleware)
+      .apply(AuthMiddleware, BodyMiddleware)
       .forRoutes({ path: 'jobs', method: RequestMethod.POST });
   }
 }
