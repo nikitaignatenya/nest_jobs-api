@@ -1,5 +1,5 @@
 import { Injectable, NestMiddleware } from '@nestjs/common';
-import { Request, Response, NextFunction } from 'express';
+import { Request, NextFunction } from 'express';
 import HttpException from 'src/exceptions/HttpException';
 import { ExceptionTypes } from 'src/exceptions/exceptions.types';
 
