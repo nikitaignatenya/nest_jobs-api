@@ -13,7 +13,6 @@ export class GlobalExceptionFilter implements ExceptionFilter {
     this.message = 'Internal server error';
     this.id = 0;
   }
-
   catch(exception: any, host: ArgumentsHost) {
     const ctx = host.switchToHttp();
     const res = ctx.getResponse<Response>();
@@ -23,6 +22,7 @@ export class GlobalExceptionFilter implements ExceptionFilter {
       this.message = exception.message;
       this.id = exception.id;
     }
+
     buildResponse(res, this.status, { id: this.id, message: this.message });
   }
 }

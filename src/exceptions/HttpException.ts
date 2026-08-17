@@ -1,4 +1,3 @@
-
 export interface iHttpException {
   id: number;
   message: string;
