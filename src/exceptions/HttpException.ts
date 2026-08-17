@@ -1,11 +1,9 @@
-import { Injectable } from '@nestjs/common';
 
 export interface iHttpException {
   id: number;
   message: string;
 }
 
-@Injectable()
 export default class HttpException extends Error {
   public status: number;
   public message: string;
