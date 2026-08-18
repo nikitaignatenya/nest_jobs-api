@@ -5,11 +5,12 @@ import { JobsService } from './jobs/jobs.service';
 import { MiddlewareConsumer, NestModule } from '@nestjs/common';
 import { AuthMiddleware } from './middlewares/auth.middleware';
 import { BodyMiddleware } from './middlewares/body.middleware';
+import { DatabaseService } from './storage/database.service';
 
 @Module({
   imports: [JobsModule],
   controllers: [JobsController],
-  providers: [JobsService],
+  providers: [JobsService, DatabaseService],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
